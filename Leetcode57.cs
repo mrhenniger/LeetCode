@@ -19,8 +19,38 @@ public class Leetcode57
 {
     public int[][] Insert(int[][] intervals, int[] newInterval)
     {
-        // TODO: implement
-        return new int[0][];
+        List<int[]> result = new List<int[]>();
+        int i = 0;
+        int n = intervals.Length;
+
+        // Everything that ends before newInterval starts passes through untouched.
+        while (i < n && intervals[i][1] < newInterval[0])
+        {
+            result.Add(intervals[i]);
+            i++;
+        }
+
+        // Absorb every interval that starts at or before the running end. The end
+        // can grow as we go, so this keeps swallowing intervals the widened range
+        // now reaches.
+        int start = newInterval[0];
+        int end = newInterval[1];
+        while (i < n && intervals[i][0] <= end)
+        {
+            start = Math.Min(start, intervals[i][0]);
+            end = Math.Max(end, intervals[i][1]);
+            i++;
+        }
+        result.Add(new int[] { start, end });
+
+        // The rest all start after the merged interval ends.
+        while (i < n)
+        {
+            result.Add(intervals[i]);
+            i++;
+        }
+
+        return result.ToArray();
     }
 
     public static void Main()
