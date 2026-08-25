@@ -27,19 +27,19 @@ public class Leetcode452
         
         int count = 0;
         int[] current = balloons[0];
-        Console.WriteLine("current=" + current[0] + "," + current[1]);
+        //Console.WriteLine("current=" + current[0] + "," + current[1]);
         for(int b=1; b<balloons.Length; b++) {
             int[] next = balloons[b];
-            Console.WriteLine("next=" + next[0] + "," + next[1]);
+            //Console.WriteLine("next=" + next[0] + "," + next[1]);
             if (next[0] <= current[1]) {
                 current[0] = Math.Max(current[0], next[0]);
                 current[1] = Math.Min(current[1], next[1]);
-                Console.WriteLine("merged current=" + current[0] + "," + current[1]);
+                //Console.WriteLine("merged current=" + current[0] + "," + current[1]);
             } else {
                 //Console.WriteLine("current=" + current[0] + "," + current[1] + ", next=" + next[0] + "," + next[1]);
                 current = next;
                 count++;
-                Console.WriteLine("new current=" + current[0] + "," + current[1]);
+                //Console.WriteLine("new current=" + current[0] + "," + current[1]);
             }
         }
         count++;

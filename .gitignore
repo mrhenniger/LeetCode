@@ -9,3 +9,9 @@ obj/
 .vs/
 .idea/
 *.user
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.ilk
+*.out
