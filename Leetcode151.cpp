@@ -70,11 +70,10 @@ public:
 int main() {
     Leetcode151 solution;
 
-    std::string sample = "sample";
-    solution.reverseWord(sample, 0, 5);
-    std::cout << "sample reveresed:  " << sample << std::endl; // "fedcba"
+    //std::string sample = "sample";
+    //solution.reverseWord(sample, 0, 5);
+    //std::cout << "sample reveresed:  " << sample << std::endl; // "fedcba"
 
-    /*
     std::vector<std::string> tests = {
         "sample",                   // "sample"
         "the sky is blue",          // "blue is sky the"
@@ -88,7 +87,6 @@ int main() {
         std::cout << "Test Case " << (i + 1) << std::endl;
         std::cout << "\"" << solution.reverseWords(tests[i]) << "\"" << std::endl;
     }
-        */
 
     return 0;
 }
