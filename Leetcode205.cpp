@@ -57,7 +57,7 @@ public:
             }
         }
 
-        std::cout << "All characters mapped successfully." << std::endl;
+        //std::cout << "All characters mapped successfully." << std::endl;
         return true;
     }
 };
